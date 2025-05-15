@@ -14,8 +14,7 @@ A tiny, dependency-free Ruby gem that fetches and exposes a list of projects fro
 Add the gem to your project:
 
 ```ruby
-gem "shill", github: "marckohlbrugge/shill"   # until published on RubyGems
-gem "shill"                                   # once published
+gem "shill"
 ```
 
 Then install:
