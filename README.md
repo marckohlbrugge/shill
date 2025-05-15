@@ -178,3 +178,27 @@ Shill.projects(refresh: true)   # bypasses cache and stores fresh data
 ```
 
 ---
+
+## Rails view helpers
+
+Once the gem is loaded in a Rails app, you can access the data directly in any view:
+
+```erb
+<ul>
+  <% shill_projects.each do |project| %>
+    <li>
+      <%= link_to project.name, project.url %> — <%= project.description %>
+    </li>
+  <% end %>
+</ul>
+```
+
+Need just one?
+
+```erb
+<% if (proj = shill_random_project) %>
+  <%= link_to proj.name, proj.url %>
+<% end %>
+```
+
+---

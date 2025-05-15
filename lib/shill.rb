@@ -1,6 +1,13 @@
 # frozen_string_literal: true
 
 require_relative "shill/version"
+# Autoload internal files
+require_relative "shill/helpers"
+
+# Load Railtie if Rails is present
+if defined?(Rails::Railtie)
+  require_relative "shill/railtie"
+end
 
 module Shill
   class Error < StandardError; end
