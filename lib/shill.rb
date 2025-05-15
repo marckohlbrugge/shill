@@ -106,8 +106,8 @@ module Shill
       # Return an array of Project objects for nicer dot-notation access.
       parsed.map { |attrs| Project.new(attrs) }
     rescue StandardError => e
-      # Re-wrap into Shill::Error to keep API consistent
-      raise Error, e.message unless e.is_a?(Error)
+      # Always propagate as Shill::Error so callers never receive `nil`.
+      raise Error, e.message
     end
 
     # Ensure we have an array of hashes with required keys.
